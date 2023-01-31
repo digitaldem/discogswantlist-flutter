@@ -23,38 +23,78 @@ class WantsListView extends ConsumerWidget {
       });
     }
 
+    // Define a scroll controller to inform WantsScrollToTop state
+    final ScrollController scrollController = ScrollController();
+    scrollController.addListener(() {
+      // Set WantsScrollToTop to true when listview is offset (scrolled)
+      ref.read(wantsScrollToTopProvider.notifier).state = (scrollController.offset > 100);
+    });
+
     // Render based on state
     return state.when(
       initial: () => const Expanded(child: Center(child: CircularProgressIndicator.adaptive())),
       loading: (progress) => Expanded(
-          child: Padding(padding: const EdgeInsets.only(left: 20, right: 20), child: Center(child: LinearProgressIndicator(value: progress)))),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Center(
+            child: LinearProgressIndicator(
+              color: Colors.black87,
+              value: progress,
+            ),
+          ),
+        ),
+      ),
       success: (data) => Expanded(
         child: Padding(
           padding: const EdgeInsets.all(8),
-          child: RefreshIndicator(
-            onRefresh: () async {
-              // Invalidate the state (and underlying local cache) for the entire MarketplaceFeed family
-              ref.invalidate(marketplaceFeedStateNotifierProvider);
-              // Invoke a force-fetch to refresh the Wants list
-              ref.read(wantsStateNotifierProvider.notifier).getWants(true);
-            },
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return Column(children: [
-                  WantsListViewItem(
-                      index: index + 1,
-                      id: data[index].id,
-                      artist: data[index].information.artist,
-                      title: data[index].information.title,
-                      imageUrl: data[index].information.image),
-                  const SizedBox(
-                    height: 16,
-                  )
-                ]);
+          child: Stack(children: [
+            RefreshIndicator(
+              onRefresh: () async {
+                // Invalidate the state (and underlying local cache) for the entire MarketplaceFeed family
+                ref.invalidate(marketplaceFeedStateNotifierProvider);
+                // Invoke a force-fetch to refresh the Wants list
+                ref.read(wantsStateNotifierProvider.notifier).getWants(true);
               },
-              itemCount: data.length,
+              color: Colors.black87,
+              child: ListView.builder(
+                controller: scrollController,
+                itemBuilder: (context, index) {
+                  return Column(children: [
+                    WantsListViewItem(
+                        index: index + 1,
+                        id: data[index].id,
+                        artist: data[index].information.artist,
+                        title: data[index].information.title,
+                        imageUrl: data[index].information.image),
+                    const SizedBox(
+                      height: 16,
+                    )
+                  ]);
+                },
+                itemCount: data.length,
+              ),
             ),
-          ),
+            Positioned(
+              right: 20,
+              bottom: 20,
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 500),
+                  opacity: ref.watch(wantsScrollToTopProvider) ? 0.9 : 0.0,
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.black87,
+                    elevation: 10,
+                    child: const Icon(Icons.arrow_upward),
+                    onPressed: () {
+                      // Scroll back up to the top
+                      scrollController.animateTo(0, duration: const Duration(milliseconds: 500), curve: Curves.fastOutSlowIn);
+                    },
+                  ),
+                ),
+              ),
+            ),
+          ]),
         ),
       ),
       error: (error) => Expanded(child: Center(child: ErrorInfo(error: error))),
