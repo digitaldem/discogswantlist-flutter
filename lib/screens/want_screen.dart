@@ -24,6 +24,7 @@ class WantScreen extends RScreen<AppNavigator, WantSegment> {
   @override
   Widget buildScreen(BuildContext context, WidgetRef ref, AppNavigator navigator, IconButton? appBarLeading) => Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black54,
           title: const Text('Want List'),
           leading: appBarLeading,
         ),
