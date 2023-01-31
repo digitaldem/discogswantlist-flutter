@@ -3,6 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../services/wants/wants_service.dart';
 import './wants_state.dart';
 
+// Simple state provider to apply filtering logic
+final wantsFilterProvider = StateProvider((ref) => '', name: 'WantsFilter');
+
+// Simple state provider to show/hide scroll-to-top button
+final wantsScrollToTopProvider = StateProvider((ref) => false, name: 'WantsScrollToTop');
+
 // This provider has a dependency on WantsService
 final wantsStateNotifierProvider =
     StateNotifierProvider<WantsStateNotifier, WantsState>((ref) => WantsStateNotifier(ref.watch(wantsServiceProvider)), name: 'WantsStateNotifier');

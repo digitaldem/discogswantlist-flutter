@@ -5,11 +5,9 @@ import '../../extensions/either.dart';
 import '../../models/want/want.dart';
 import '../../repositories/wants/wants_repository.dart';
 import '../../repositories/wants/wants_repository_http.dart';
+import '../../states/wants/wants_state_notifier.dart';
 
-// Simple state provider to apply filtering logic
-final wantsFilterProvider = StateProvider((ref) => '', name: 'WantsFilter');
-
-// This provider has a dependency on WantsRepository and the above Filter State
+// This provider has a dependency on WantsRepository and the FilterState
 final wantsServiceProvider =
     StateProvider<WantsService>((ref) => WantsService(ref.watch(wantsRepositoryProvider), ref.watch(wantsFilterProvider)), name: 'WantsService');
 

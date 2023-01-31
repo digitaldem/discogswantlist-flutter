@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../services/wants/wants_service.dart';
+import '../states/wants/wants_state_notifier.dart';
 
 class Filter extends ConsumerWidget {
   // Ctor
