@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_navigator/riverpod_navigator.dart';
+
 import './observers/logger.dart';
 import './screens/home_screen.dart';
 import './app_navigator.dart';
