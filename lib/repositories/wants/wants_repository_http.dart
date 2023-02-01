@@ -30,13 +30,7 @@ class WantsRepositoryHttp implements WantsRepository {
 
   // Get the Want models for this from Local Cache or Remote API
   @override
-  Future<Either<Exception, List<Want>>> getWants(bool invalidateCache) async {
-    // Clear the local cache if performing a refresh
-    if (invalidateCache) {
-      wants.clear();
-      _progress = 0.0;
-    }
-
+  Future<Either<Exception, List<Want>>> getWants() async {
     // Check if API result has been cached locally and return immediately
     if (wants.isNotEmpty) {
       return Right(wants);
@@ -63,5 +57,12 @@ class WantsRepositoryHttp implements WantsRepository {
     } on Exception catch (e) {
       return Left(e);
     }
+  }
+
+  @override
+  void clearWants() {
+    // Clear the local cache in order to perform a refresh
+    wants.clear();
+    _progress = 0.0;
   }
 }

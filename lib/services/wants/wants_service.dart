@@ -23,8 +23,15 @@ class WantsService {
 
   // Call into the repository to get Want models and apply filtering logic
   Future<Either<Exception, List<Want>>> getWants(bool invalidateCache) async {
-    final wants = await repository.getWants(invalidateCache);
-    // Check if repository returns models
+    // If forcing a refresh, clear the local cache
+    if (invalidateCache) {
+      repository.clearWants();
+    }
+
+    // Call and await for repository to get Want models
+    final wants = await repository.getWants();
+
+    // Check if repository returned models
     if (wants.isRight()) {
       // Apply artist name filter from Filter state and only return the matches
       final matches = wants.getRightOrThrow().where((e) => e.information.artist.toLowerCase().contains(filter.toLowerCase())).toList();

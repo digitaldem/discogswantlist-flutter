@@ -11,7 +11,7 @@ class WantsRepositoryMock implements WantsRepository {
   double get progress => 0.0;
 
   @override
-  Future<Either<Exception, List<Want>>> getWants(bool invalidateCache) async {
+  Future<Either<Exception, List<Want>>> getWants() async {
     try {
       final List<Want> wants = <Want>[];
       return Right(wants);
@@ -19,4 +19,7 @@ class WantsRepositoryMock implements WantsRepository {
       return Left(e);
     }
   }
+
+  @override
+  void clearWants() {}
 }
