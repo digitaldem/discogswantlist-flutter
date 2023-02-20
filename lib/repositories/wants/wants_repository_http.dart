@@ -1,24 +1,29 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../extensions/shared_preferences.dart';
 import '../../http/http_client.dart';
 import '../../models/configuration/configuration.dart';
 import '../../models/want/want.dart';
 import '../../models/wantlist/wantlist.dart';
 import '../../services/configuration/configuration_service.dart';
+import '../../services/shared_preferences/shared_preferences_service.dart';
 import './wants_repository.dart';
 
 // This provider has dependencies on Configuration and HTTPClient
 final wantsRepositoryProvider = Provider<WantsRepository>(
-    (ref) => WantsRepositoryHttp(ref.watch(configurationServiceProvider.future), ref.watch(httpClientProvider)),
+    (ref) => WantsRepositoryHttp(
+        ref.watch(configurationServiceProvider.future), ref.watch(sharedPreferencesServiceProvider.future), ref.watch(httpClientProvider)),
     name: 'WantsRepository');
 
 // Defines an HTTP-backed repository for the Want models
 class WantsRepositoryHttp implements WantsRepository {
   // Ctor
   final Future<Configuration> configuration;
+  final Future<SharedPreferences> sharedPreferences;
   final HttpClient client;
-  WantsRepositoryHttp(this.configuration, this.client);
+  WantsRepositoryHttp(this.configuration, this.sharedPreferences, this.client);
 
   // Backing values for API ressult and download progress tracking
   final List<Want> wants = <Want>[];
@@ -51,8 +56,22 @@ class WantsRepositoryHttp implements WantsRepository {
         // Increment the page counter
         currentPage++;
       } while (currentPage <= totalPages);
-      // Once all pages are downloaded, sort the Want list
-      wants.sort();
+
+      // Once all pages are downloaded, sort the list placing favorites first
+      final List<int> favorites = (await sharedPreferences).getIntList('favorites') ?? [];
+      wants.sort((a, b) {
+        final bool aIsAFavorite = favorites.contains(a.id);
+        final bool bIsAFavorite = favorites.contains(b.id);
+        if (aIsAFavorite && !bIsAFavorite) {
+          return -1;
+        }
+        if (!aIsAFavorite && bIsAFavorite) {
+          return 1;
+        }
+        return a.compareTo(b);
+      });
+
+      // Return the complete (sorted) Want list
       return Right(wants);
     } on Exception catch (e) {
       return Left(e);
