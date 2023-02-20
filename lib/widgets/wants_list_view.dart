@@ -61,11 +61,9 @@ class WantsListView extends ConsumerWidget {
                 itemBuilder: (context, index) {
                   return Column(children: [
                     WantsListViewItem(
-                        index: index + 1,
-                        id: data[index].id,
-                        artist: data[index].information.artist,
-                        title: data[index].information.title,
-                        imageUrl: data[index].information.image),
+                      index: index + 1,
+                      want: data[index],
+                    ),
                     const SizedBox(
                       height: 16,
                     )
