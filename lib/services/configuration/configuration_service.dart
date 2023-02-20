@@ -10,4 +10,4 @@ final configurationServiceProvider = FutureProvider<Configuration>((ref) async {
   final content = json.decode(await rootBundle.loadString('assets/configuration.json')) as Map<String, Object?>;
   // Deserialize to Configuration model
   return Configuration.fromJson(content);
-});
+}, name: 'ConfigurationService');
