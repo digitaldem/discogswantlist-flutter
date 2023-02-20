@@ -34,7 +34,7 @@ class WantsService {
     // Check if repository returned models
     if (wants.isRight()) {
       // Apply artist name filter from Filter state and only return the matches
-      final matches = wants.getRightOrThrow().where((e) => e.information.artist.toLowerCase().contains(filter.toLowerCase())).toList();
+      final List<Want> matches = wants.getRightOrThrow().where((e) => e.information.artist.toLowerCase().contains(filter.toLowerCase())).toList();
       return Right(matches);
     }
     // Return Left (Exception)
