@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import './album_art.dart';
+
 class WantTile extends ConsumerWidget {
   // Ctor
   final int id;
@@ -20,7 +22,7 @@ class WantTile extends ConsumerWidget {
         const SizedBox(
           height: 8,
         ),
-        imageUrl != '' ? Image.network(imageUrl, width: 240, height: 240) : Container(),
+        (imageUrl != '') ? AlbumArt(imageUrl: imageUrl, width: 240, height: 240) : const SizedBox(width: 240, height: 240),
         const SizedBox(
           height: 8,
         ),
