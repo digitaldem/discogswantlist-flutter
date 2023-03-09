@@ -17,7 +17,7 @@ class WantTile extends ConsumerWidget {
       children: [
         Text(
           artist,
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(
           height: 8,
@@ -28,7 +28,7 @@ class WantTile extends ConsumerWidget {
         ),
         Text(
           title,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(
           height: 8,

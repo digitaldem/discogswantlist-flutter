@@ -27,7 +27,7 @@ class MarketplaceSummary extends ConsumerWidget {
       loading: () => const Center(child: CircularProgressIndicator.adaptive()),
       success: (data) => Text(
         '${data.entry.length} for sale',
-        style: Theme.of(context).textTheme.headline6,
+        style: Theme.of(context).textTheme.titleLarge,
       ),
       error: (error) => const Center(child: Text('Marketplace Error')),
     );

@@ -31,7 +31,7 @@ class WantsListViewItem extends ConsumerWidget {
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                     Text(
                       index.toString(),
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                       textAlign: TextAlign.left,
                     ),
                     Align(
