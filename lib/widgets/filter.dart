@@ -5,7 +5,7 @@ import '../states/wants/wants_state_notifier.dart';
 
 class Filter extends ConsumerWidget {
   // Ctor
-  const Filter({Key? key}) : super(key: key);
+  const Filter({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

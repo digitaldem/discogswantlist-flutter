@@ -13,7 +13,7 @@ class WantsListViewItem extends ConsumerWidget {
   // Ctor
   final int index;
   final Want want;
-  const WantsListViewItem({Key? key, required this.index, required this.want}) : super(key: key);
+  const WantsListViewItem({super.key, required this.index, required this.want});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

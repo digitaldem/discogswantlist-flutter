@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class ErrorInfo extends ConsumerWidget {
   // Ctor
   final Exception error;
-  const ErrorInfo({Key? key, required this.error}) : super(key: key);
+  const ErrorInfo({super.key, required this.error});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

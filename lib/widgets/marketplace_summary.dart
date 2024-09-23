@@ -7,7 +7,7 @@ import '../states/marketplace_feed/marketplace_feed_state.dart';
 class MarketplaceSummary extends ConsumerWidget {
   // Ctor
   final int id;
-  const MarketplaceSummary({Key? key, required this.id}) : super(key: key);
+  const MarketplaceSummary({super.key, required this.id});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -6,7 +6,7 @@ import './wants_list_view.dart';
 
 class Wantlist extends ConsumerWidget {
   // Ctor
-  const Wantlist({Key? key}) : super(key: key);
+  const Wantlist({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

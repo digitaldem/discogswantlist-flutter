@@ -9,7 +9,7 @@ import './wants_list_view_item.dart';
 
 class WantsListView extends ConsumerWidget {
   // Ctor
-  const WantsListView({Key? key}) : super(key: key);
+  const WantsListView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

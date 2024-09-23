@@ -18,7 +18,7 @@ class WantSegment extends TypedSegment {
 
 // Define screen
 class WantScreen extends RScreen<AppNavigator, WantSegment> {
-  const WantScreen(WantSegment segment) : super(segment);
+  const WantScreen(super.segment);
 
   // Build root Widget tree for this screen
   @override

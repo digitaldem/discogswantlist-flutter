@@ -8,7 +8,7 @@ import '../states/marketplace_feed/marketplace_feed_state.dart';
 class MarketplaceDetail extends ConsumerWidget {
   // Ctor
   final int id;
-  const MarketplaceDetail({Key? key, required this.id}) : super(key: key);
+  const MarketplaceDetail({super.key, required this.id});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

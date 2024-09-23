@@ -9,7 +9,7 @@ import './want_tile.dart';
 class WantDetail extends ConsumerWidget {
   // Ctor
   final int id;
-  const WantDetail({Key? key, required this.id}) : super(key: key);
+  const WantDetail({super.key, required this.id});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

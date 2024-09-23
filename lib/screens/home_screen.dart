@@ -13,7 +13,7 @@ class HomeSegment extends TypedSegment {
 
 // Define screen
 class HomeScreen extends RScreen<AppNavigator, HomeSegment> {
-  const HomeScreen(HomeSegment segment) : super(segment);
+  const HomeScreen(super.segment);
 
   // Build root Widget tree for this screen
   @override

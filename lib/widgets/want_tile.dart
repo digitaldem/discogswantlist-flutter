@@ -9,7 +9,7 @@ class WantTile extends ConsumerWidget {
   final String artist;
   final String title;
   final String imageUrl;
-  const WantTile({Key? key, required this.id, required this.artist, required this.title, required this.imageUrl}) : super(key: key);
+  const WantTile({super.key, required this.id, required this.artist, required this.title, required this.imageUrl});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
