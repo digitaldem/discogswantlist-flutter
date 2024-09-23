@@ -30,8 +30,12 @@ mixin _$Want {
   Information get information => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
 
+  /// Serializes this Want to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Want
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $WantCopyWith<Want> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -61,6 +65,8 @@ class _$WantCopyWithImpl<$Res, $Val extends Want>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Want
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,6 +105,8 @@ class _$WantCopyWithImpl<$Res, $Val extends Want>
     ) as $Val);
   }
 
+  /// Create a copy of Want
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InformationCopyWith<$Res> get information {
@@ -134,6 +142,8 @@ class __$$WantImplCopyWithImpl<$Res>
   __$$WantImplCopyWithImpl(_$WantImpl _value, $Res Function(_$WantImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Want
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -237,12 +247,14 @@ class _$WantImpl extends _Want with DiagnosticableTreeMixin {
             (identical(other.notes, notes) || other.notes == notes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, url, rating, dateAdded, information, notes);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Want
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$WantImplCopyWith<_$WantImpl> get copyWith =>
@@ -284,8 +296,11 @@ abstract class _Want extends Want {
   Information get information;
   @override
   String get notes;
+
+  /// Create a copy of Want
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$WantImplCopyWith<_$WantImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

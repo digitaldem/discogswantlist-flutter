@@ -25,8 +25,12 @@ mixin _$MarketplaceEntry {
   String get updated => throw _privateConstructorUsedError;
   String get summary => throw _privateConstructorUsedError;
 
+  /// Serializes this MarketplaceEntry to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MarketplaceEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MarketplaceEntryCopyWith<MarketplaceEntry> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$MarketplaceEntryCopyWithImpl<$Res, $Val extends MarketplaceEntry>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MarketplaceEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,6 +104,8 @@ class __$$MarketplaceEntryImplCopyWithImpl<$Res>
       $Res Function(_$MarketplaceEntryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MarketplaceEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -165,11 +173,13 @@ class _$MarketplaceEntryImpl extends _MarketplaceEntry {
             (identical(other.summary, summary) || other.summary == summary));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, title, updated, summary);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MarketplaceEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MarketplaceEntryImplCopyWith<_$MarketplaceEntryImpl> get copyWith =>
@@ -203,8 +213,11 @@ abstract class _MarketplaceEntry extends MarketplaceEntry {
   String get updated;
   @override
   String get summary;
+
+  /// Create a copy of MarketplaceEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MarketplaceEntryImplCopyWith<_$MarketplaceEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

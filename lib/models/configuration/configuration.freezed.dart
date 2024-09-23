@@ -24,8 +24,12 @@ mixin _$Configuration {
   String? get discogsToken => throw _privateConstructorUsedError;
   String? get discogsUsername => throw _privateConstructorUsedError;
 
+  /// Serializes this Configuration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Configuration
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ConfigurationCopyWith<Configuration> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$ConfigurationCopyWithImpl<$Res, $Val extends Configuration>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Configuration
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -94,6 +100,8 @@ class __$$ConfigurationImplCopyWithImpl<$Res>
       _$ConfigurationImpl _value, $Res Function(_$ConfigurationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Configuration
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -166,12 +174,14 @@ class _$ConfigurationImpl
                 other.discogsUsername == discogsUsername));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, discogsUrl, discogsToken, discogsUsername);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Configuration
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigurationImplCopyWith<_$ConfigurationImpl> get copyWith =>
@@ -200,8 +210,11 @@ abstract class _Configuration implements Configuration {
   String? get discogsToken;
   @override
   String? get discogsUsername;
+
+  /// Create a copy of Configuration
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConfigurationImplCopyWith<_$ConfigurationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

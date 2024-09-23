@@ -32,8 +32,12 @@ mixin _$Information {
   List<String> get genres => throw _privateConstructorUsedError;
   List<String> get styles => throw _privateConstructorUsedError;
 
+  /// Serializes this Information to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Information
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $InformationCopyWith<Information> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -66,6 +70,8 @@ class _$InformationCopyWithImpl<$Res, $Val extends Information>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Information
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -148,6 +154,8 @@ class __$$InformationImplCopyWithImpl<$Res>
       _$InformationImpl _value, $Res Function(_$InformationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Information
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -298,7 +306,7 @@ class _$InformationImpl extends _Information with DiagnosticableTreeMixin {
             const DeepCollectionEquality().equals(other._styles, _styles));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -312,7 +320,9 @@ class _$InformationImpl extends _Information with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(_genres),
       const DeepCollectionEquality().hash(_styles));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Information
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InformationImplCopyWith<_$InformationImpl> get copyWith =>
@@ -362,8 +372,11 @@ abstract class _Information extends Information {
   List<String> get genres;
   @override
   List<String> get styles;
+
+  /// Create a copy of Information
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InformationImplCopyWith<_$InformationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

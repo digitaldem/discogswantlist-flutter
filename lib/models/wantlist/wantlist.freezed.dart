@@ -23,8 +23,12 @@ mixin _$WantList {
   Pagination get pagination => throw _privateConstructorUsedError;
   List<Want> get wants => throw _privateConstructorUsedError;
 
+  /// Serializes this WantList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of WantList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $WantListCopyWith<WantList> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$WantListCopyWithImpl<$Res, $Val extends WantList>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of WantList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -67,6 +73,8 @@ class _$WantListCopyWithImpl<$Res, $Val extends WantList>
     ) as $Val);
   }
 
+  /// Create a copy of WantList
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PaginationCopyWith<$Res> get pagination {
@@ -98,6 +106,8 @@ class __$$WantListImplCopyWithImpl<$Res>
       _$WantListImpl _value, $Res Function(_$WantListImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of WantList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -160,12 +170,14 @@ class _$WantListImpl with DiagnosticableTreeMixin implements _WantList {
             const DeepCollectionEquality().equals(other._wants, _wants));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, pagination, const DeepCollectionEquality().hash(_wants));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of WantList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$WantListImplCopyWith<_$WantListImpl> get copyWith =>
@@ -191,8 +203,11 @@ abstract class _WantList implements WantList {
   Pagination get pagination;
   @override
   List<Want> get wants;
+
+  /// Create a copy of WantList
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$WantListImplCopyWith<_$WantListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

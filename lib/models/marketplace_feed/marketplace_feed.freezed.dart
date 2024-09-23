@@ -25,8 +25,12 @@ mixin _$MarketplaceFeed {
   String get updated => throw _privateConstructorUsedError;
   List<MarketplaceEntry> get entry => throw _privateConstructorUsedError;
 
+  /// Serializes this MarketplaceFeed to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MarketplaceFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MarketplaceFeedCopyWith<MarketplaceFeed> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$MarketplaceFeedCopyWithImpl<$Res, $Val extends MarketplaceFeed>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MarketplaceFeed
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -100,6 +106,8 @@ class __$$MarketplaceFeedImplCopyWithImpl<$Res>
       _$MarketplaceFeedImpl _value, $Res Function(_$MarketplaceFeedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MarketplaceFeed
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -172,12 +180,14 @@ class _$MarketplaceFeedImpl implements _MarketplaceFeed {
             const DeepCollectionEquality().equals(other._entry, _entry));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, title, updated,
       const DeepCollectionEquality().hash(_entry));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MarketplaceFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MarketplaceFeedImplCopyWith<_$MarketplaceFeedImpl> get copyWith =>
@@ -210,8 +220,11 @@ abstract class _MarketplaceFeed implements MarketplaceFeed {
   String get updated;
   @override
   List<MarketplaceEntry> get entry;
+
+  /// Create a copy of MarketplaceFeed
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MarketplaceFeedImplCopyWith<_$MarketplaceFeedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
