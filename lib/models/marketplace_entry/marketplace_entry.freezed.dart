@@ -12,7 +12,7 @@ part of 'marketplace_entry.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MarketplaceEntry _$MarketplaceEntryFromJson(Map<String, dynamic> json) {
   return _MarketplaceEntry.fromJson(json);
@@ -80,22 +80,22 @@ class _$MarketplaceEntryCopyWithImpl<$Res, $Val extends MarketplaceEntry>
 }
 
 /// @nodoc
-abstract class _$$_MarketplaceEntryCopyWith<$Res>
+abstract class _$$MarketplaceEntryImplCopyWith<$Res>
     implements $MarketplaceEntryCopyWith<$Res> {
-  factory _$$_MarketplaceEntryCopyWith(
-          _$_MarketplaceEntry value, $Res Function(_$_MarketplaceEntry) then) =
-      __$$_MarketplaceEntryCopyWithImpl<$Res>;
+  factory _$$MarketplaceEntryImplCopyWith(_$MarketplaceEntryImpl value,
+          $Res Function(_$MarketplaceEntryImpl) then) =
+      __$$MarketplaceEntryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String title, String updated, String summary});
 }
 
 /// @nodoc
-class __$$_MarketplaceEntryCopyWithImpl<$Res>
-    extends _$MarketplaceEntryCopyWithImpl<$Res, _$_MarketplaceEntry>
-    implements _$$_MarketplaceEntryCopyWith<$Res> {
-  __$$_MarketplaceEntryCopyWithImpl(
-      _$_MarketplaceEntry _value, $Res Function(_$_MarketplaceEntry) _then)
+class __$$MarketplaceEntryImplCopyWithImpl<$Res>
+    extends _$MarketplaceEntryCopyWithImpl<$Res, _$MarketplaceEntryImpl>
+    implements _$$MarketplaceEntryImplCopyWith<$Res> {
+  __$$MarketplaceEntryImplCopyWithImpl(_$MarketplaceEntryImpl _value,
+      $Res Function(_$MarketplaceEntryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_MarketplaceEntryCopyWithImpl<$Res>
     Object? updated = null,
     Object? summary = null,
   }) {
-    return _then(_$_MarketplaceEntry(
+    return _then(_$MarketplaceEntryImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -129,16 +129,16 @@ class __$$_MarketplaceEntryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MarketplaceEntry extends _MarketplaceEntry {
-  _$_MarketplaceEntry(
+class _$MarketplaceEntryImpl extends _MarketplaceEntry {
+  _$MarketplaceEntryImpl(
       {required this.id,
       required this.title,
       required this.updated,
       required this.summary})
       : super._();
 
-  factory _$_MarketplaceEntry.fromJson(Map<String, dynamic> json) =>
-      _$$_MarketplaceEntryFromJson(json);
+  factory _$MarketplaceEntryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MarketplaceEntryImplFromJson(json);
 
   @override
   final String id;
@@ -155,10 +155,10 @@ class _$_MarketplaceEntry extends _MarketplaceEntry {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MarketplaceEntry &&
+            other is _$MarketplaceEntryImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.updated, updated) || other.updated == updated) &&
@@ -172,12 +172,13 @@ class _$_MarketplaceEntry extends _MarketplaceEntry {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MarketplaceEntryCopyWith<_$_MarketplaceEntry> get copyWith =>
-      __$$_MarketplaceEntryCopyWithImpl<_$_MarketplaceEntry>(this, _$identity);
+  _$$MarketplaceEntryImplCopyWith<_$MarketplaceEntryImpl> get copyWith =>
+      __$$MarketplaceEntryImplCopyWithImpl<_$MarketplaceEntryImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MarketplaceEntryToJson(
+    return _$$MarketplaceEntryImplToJson(
       this,
     );
   }
@@ -188,11 +189,11 @@ abstract class _MarketplaceEntry extends MarketplaceEntry {
       {required final String id,
       required final String title,
       required final String updated,
-      required final String summary}) = _$_MarketplaceEntry;
+      required final String summary}) = _$MarketplaceEntryImpl;
   _MarketplaceEntry._() : super._();
 
   factory _MarketplaceEntry.fromJson(Map<String, dynamic> json) =
-      _$_MarketplaceEntry.fromJson;
+      _$MarketplaceEntryImpl.fromJson;
 
   @override
   String get id;
@@ -204,6 +205,6 @@ abstract class _MarketplaceEntry extends MarketplaceEntry {
   String get summary;
   @override
   @JsonKey(ignore: true)
-  _$$_MarketplaceEntryCopyWith<_$_MarketplaceEntry> get copyWith =>
+  _$$MarketplaceEntryImplCopyWith<_$MarketplaceEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

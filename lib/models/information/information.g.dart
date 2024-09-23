@@ -6,12 +6,12 @@ part of 'information.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Information _$$_InformationFromJson(Map<String, dynamic> json) =>
-    _$_Information(
-      id: json['id'] as int,
+_$InformationImpl _$$InformationImplFromJson(Map<String, dynamic> json) =>
+    _$InformationImpl(
+      id: (json['id'] as num).toInt(),
       url: json['resource_url'] as String,
       title: json['title'] as String,
-      year: json['year'] as int,
+      year: (json['year'] as num).toInt(),
       artists: (json['artists'] as List<dynamic>)
           .map((e) => Artist.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -23,7 +23,7 @@ _$_Information _$$_InformationFromJson(Map<String, dynamic> json) =>
           (json['styles'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_InformationToJson(_$_Information instance) =>
+Map<String, dynamic> _$$InformationImplToJson(_$InformationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'resource_url': instance.url,

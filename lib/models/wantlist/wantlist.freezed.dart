@@ -12,7 +12,7 @@ part of 'wantlist.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 WantList _$WantListFromJson(Map<String, dynamic> json) {
   return _WantList.fromJson(json);
@@ -77,10 +77,11 @@ class _$WantListCopyWithImpl<$Res, $Val extends WantList>
 }
 
 /// @nodoc
-abstract class _$$_WantListCopyWith<$Res> implements $WantListCopyWith<$Res> {
-  factory _$$_WantListCopyWith(
-          _$_WantList value, $Res Function(_$_WantList) then) =
-      __$$_WantListCopyWithImpl<$Res>;
+abstract class _$$WantListImplCopyWith<$Res>
+    implements $WantListCopyWith<$Res> {
+  factory _$$WantListImplCopyWith(
+          _$WantListImpl value, $Res Function(_$WantListImpl) then) =
+      __$$WantListImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Pagination pagination, List<Want> wants});
@@ -90,11 +91,11 @@ abstract class _$$_WantListCopyWith<$Res> implements $WantListCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_WantListCopyWithImpl<$Res>
-    extends _$WantListCopyWithImpl<$Res, _$_WantList>
-    implements _$$_WantListCopyWith<$Res> {
-  __$$_WantListCopyWithImpl(
-      _$_WantList _value, $Res Function(_$_WantList) _then)
+class __$$WantListImplCopyWithImpl<$Res>
+    extends _$WantListCopyWithImpl<$Res, _$WantListImpl>
+    implements _$$WantListImplCopyWith<$Res> {
+  __$$WantListImplCopyWithImpl(
+      _$WantListImpl _value, $Res Function(_$WantListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -103,7 +104,7 @@ class __$$_WantListCopyWithImpl<$Res>
     Object? pagination = null,
     Object? wants = null,
   }) {
-    return _then(_$_WantList(
+    return _then(_$WantListImpl(
       pagination: null == pagination
           ? _value.pagination
           : pagination // ignore: cast_nullable_to_non_nullable
@@ -118,12 +119,12 @@ class __$$_WantListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WantList with DiagnosticableTreeMixin implements _WantList {
-  _$_WantList({required this.pagination, required final List<Want> wants})
+class _$WantListImpl with DiagnosticableTreeMixin implements _WantList {
+  _$WantListImpl({required this.pagination, required final List<Want> wants})
       : _wants = wants;
 
-  factory _$_WantList.fromJson(Map<String, dynamic> json) =>
-      _$$_WantListFromJson(json);
+  factory _$WantListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WantListImplFromJson(json);
 
   @override
   final Pagination pagination;
@@ -150,10 +151,10 @@ class _$_WantList with DiagnosticableTreeMixin implements _WantList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WantList &&
+            other is _$WantListImpl &&
             (identical(other.pagination, pagination) ||
                 other.pagination == pagination) &&
             const DeepCollectionEquality().equals(other._wants, _wants));
@@ -167,12 +168,12 @@ class _$_WantList with DiagnosticableTreeMixin implements _WantList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WantListCopyWith<_$_WantList> get copyWith =>
-      __$$_WantListCopyWithImpl<_$_WantList>(this, _$identity);
+  _$$WantListImplCopyWith<_$WantListImpl> get copyWith =>
+      __$$WantListImplCopyWithImpl<_$WantListImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WantListToJson(
+    return _$$WantListImplToJson(
       this,
     );
   }
@@ -181,9 +182,10 @@ class _$_WantList with DiagnosticableTreeMixin implements _WantList {
 abstract class _WantList implements WantList {
   factory _WantList(
       {required final Pagination pagination,
-      required final List<Want> wants}) = _$_WantList;
+      required final List<Want> wants}) = _$WantListImpl;
 
-  factory _WantList.fromJson(Map<String, dynamic> json) = _$_WantList.fromJson;
+  factory _WantList.fromJson(Map<String, dynamic> json) =
+      _$WantListImpl.fromJson;
 
   @override
   Pagination get pagination;
@@ -191,6 +193,6 @@ abstract class _WantList implements WantList {
   List<Want> get wants;
   @override
   @JsonKey(ignore: true)
-  _$$_WantListCopyWith<_$_WantList> get copyWith =>
+  _$$WantListImplCopyWith<_$WantListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'wants_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$WantsState {
@@ -87,24 +87,25 @@ class _$WantsStateCopyWithImpl<$Res, $Val extends WantsState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$WantsStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$WantsStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -112,9 +113,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -196,23 +197,24 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements WantsState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({double progress});
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$WantsStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$WantsStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -220,7 +222,7 @@ class __$$_LoadingCopyWithImpl<$Res>
   $Res call({
     Object? progress = null,
   }) {
-    return _then(_$_Loading(
+    return _then(_$LoadingImpl(
       null == progress
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
@@ -231,8 +233,8 @@ class __$$_LoadingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading(this.progress);
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl(this.progress);
 
   @override
   final double progress;
@@ -243,10 +245,10 @@ class _$_Loading implements _Loading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Loading &&
+            other is _$LoadingImpl &&
             (identical(other.progress, progress) ||
                 other.progress == progress));
   }
@@ -257,8 +259,8 @@ class _$_Loading implements _Loading {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadingCopyWith<_$_Loading> get copyWith =>
-      __$$_LoadingCopyWithImpl<_$_Loading>(this, _$identity);
+  _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
+      __$$LoadingImplCopyWithImpl<_$LoadingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -336,27 +338,29 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements WantsState {
-  const factory _Loading(final double progress) = _$_Loading;
+  const factory _Loading(final double progress) = _$LoadingImpl;
 
   double get progress;
   @JsonKey(ignore: true)
-  _$$_LoadingCopyWith<_$_Loading> get copyWith =>
+  _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_WantsCopyWith<$Res> {
-  factory _$$_WantsCopyWith(_$_Wants value, $Res Function(_$_Wants) then) =
-      __$$_WantsCopyWithImpl<$Res>;
+abstract class _$$WantsImplCopyWith<$Res> {
+  factory _$$WantsImplCopyWith(
+          _$WantsImpl value, $Res Function(_$WantsImpl) then) =
+      __$$WantsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Want> data});
 }
 
 /// @nodoc
-class __$$_WantsCopyWithImpl<$Res>
-    extends _$WantsStateCopyWithImpl<$Res, _$_Wants>
-    implements _$$_WantsCopyWith<$Res> {
-  __$$_WantsCopyWithImpl(_$_Wants _value, $Res Function(_$_Wants) _then)
+class __$$WantsImplCopyWithImpl<$Res>
+    extends _$WantsStateCopyWithImpl<$Res, _$WantsImpl>
+    implements _$$WantsImplCopyWith<$Res> {
+  __$$WantsImplCopyWithImpl(
+      _$WantsImpl _value, $Res Function(_$WantsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -364,7 +368,7 @@ class __$$_WantsCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$_Wants(
+    return _then(_$WantsImpl(
       null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -375,8 +379,8 @@ class __$$_WantsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Wants implements _Wants {
-  const _$_Wants(final List<Want> data) : _data = data;
+class _$WantsImpl implements _Wants {
+  const _$WantsImpl(final List<Want> data) : _data = data;
 
   final List<Want> _data;
   @override
@@ -392,10 +396,10 @@ class _$_Wants implements _Wants {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Wants &&
+            other is _$WantsImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -406,8 +410,8 @@ class _$_Wants implements _Wants {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WantsCopyWith<_$_Wants> get copyWith =>
-      __$$_WantsCopyWithImpl<_$_Wants>(this, _$identity);
+  _$$WantsImplCopyWith<_$WantsImpl> get copyWith =>
+      __$$WantsImplCopyWithImpl<_$WantsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -485,27 +489,29 @@ class _$_Wants implements _Wants {
 }
 
 abstract class _Wants implements WantsState {
-  const factory _Wants(final List<Want> data) = _$_Wants;
+  const factory _Wants(final List<Want> data) = _$WantsImpl;
 
   List<Want> get data;
   @JsonKey(ignore: true)
-  _$$_WantsCopyWith<_$_Wants> get copyWith =>
+  _$$WantsImplCopyWith<_$WantsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Exception error});
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res>
-    extends _$WantsStateCopyWithImpl<$Res, _$_Error>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$WantsStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -513,7 +519,7 @@ class __$$_ErrorCopyWithImpl<$Res>
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$_Error(
+    return _then(_$ErrorImpl(
       null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -524,8 +530,8 @@ class __$$_ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error(this.error);
+class _$ErrorImpl implements _Error {
+  const _$ErrorImpl(this.error);
 
   @override
   final Exception error;
@@ -536,10 +542,10 @@ class _$_Error implements _Error {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Error &&
+            other is _$ErrorImpl &&
             (identical(other.error, error) || other.error == error));
   }
 
@@ -549,8 +555,8 @@ class _$_Error implements _Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -628,10 +634,10 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements WantsState {
-  const factory _Error(final Exception error) = _$_Error;
+  const factory _Error(final Exception error) = _$ErrorImpl;
 
   Exception get error;
   @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

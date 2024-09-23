@@ -6,8 +6,9 @@ part of 'marketplace_feed.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MarketplaceFeed _$$_MarketplaceFeedFromJson(Map<String, dynamic> json) =>
-    _$_MarketplaceFeed(
+_$MarketplaceFeedImpl _$$MarketplaceFeedImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MarketplaceFeedImpl(
       id: json['id'] as String,
       title: json['title'] as String,
       updated: json['updated'] as String,
@@ -16,7 +17,8 @@ _$_MarketplaceFeed _$$_MarketplaceFeedFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_MarketplaceFeedToJson(_$_MarketplaceFeed instance) =>
+Map<String, dynamic> _$$MarketplaceFeedImplToJson(
+        _$MarketplaceFeedImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

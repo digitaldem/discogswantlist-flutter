@@ -6,7 +6,8 @@ part of 'wantlist.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_WantList _$$_WantListFromJson(Map<String, dynamic> json) => _$_WantList(
+_$WantListImpl _$$WantListImplFromJson(Map<String, dynamic> json) =>
+    _$WantListImpl(
       pagination:
           Pagination.fromJson(json['pagination'] as Map<String, dynamic>),
       wants: (json['wants'] as List<dynamic>)
@@ -14,7 +15,7 @@ _$_WantList _$$_WantListFromJson(Map<String, dynamic> json) => _$_WantList(
           .toList(),
     );
 
-Map<String, dynamic> _$$_WantListToJson(_$_WantList instance) =>
+Map<String, dynamic> _$$WantListImplToJson(_$WantListImpl instance) =>
     <String, dynamic>{
       'pagination': instance.pagination,
       'wants': instance.wants,

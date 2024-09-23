@@ -12,7 +12,7 @@ part of 'want.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Want _$WantFromJson(Map<String, dynamic> json) {
   return _Want.fromJson(json);
@@ -109,9 +109,10 @@ class _$WantCopyWithImpl<$Res, $Val extends Want>
 }
 
 /// @nodoc
-abstract class _$$_WantCopyWith<$Res> implements $WantCopyWith<$Res> {
-  factory _$$_WantCopyWith(_$_Want value, $Res Function(_$_Want) then) =
-      __$$_WantCopyWithImpl<$Res>;
+abstract class _$$WantImplCopyWith<$Res> implements $WantCopyWith<$Res> {
+  factory _$$WantImplCopyWith(
+          _$WantImpl value, $Res Function(_$WantImpl) then) =
+      __$$WantImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -127,9 +128,10 @@ abstract class _$$_WantCopyWith<$Res> implements $WantCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_WantCopyWithImpl<$Res> extends _$WantCopyWithImpl<$Res, _$_Want>
-    implements _$$_WantCopyWith<$Res> {
-  __$$_WantCopyWithImpl(_$_Want _value, $Res Function(_$_Want) _then)
+class __$$WantImplCopyWithImpl<$Res>
+    extends _$WantCopyWithImpl<$Res, _$WantImpl>
+    implements _$$WantImplCopyWith<$Res> {
+  __$$WantImplCopyWithImpl(_$WantImpl _value, $Res Function(_$WantImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -142,7 +144,7 @@ class __$$_WantCopyWithImpl<$Res> extends _$WantCopyWithImpl<$Res, _$_Want>
     Object? information = null,
     Object? notes = null,
   }) {
-    return _then(_$_Want(
+    return _then(_$WantImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -173,8 +175,8 @@ class __$$_WantCopyWithImpl<$Res> extends _$WantCopyWithImpl<$Res, _$_Want>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Want extends _Want with DiagnosticableTreeMixin {
-  const _$_Want(
+class _$WantImpl extends _Want with DiagnosticableTreeMixin {
+  const _$WantImpl(
       {required this.id,
       @JsonKey(name: "resource_url") required this.url,
       required this.rating,
@@ -183,7 +185,8 @@ class _$_Want extends _Want with DiagnosticableTreeMixin {
       required this.notes})
       : super._();
 
-  factory _$_Want.fromJson(Map<String, dynamic> json) => _$$_WantFromJson(json);
+  factory _$WantImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WantImplFromJson(json);
 
   @override
   final int id;
@@ -220,10 +223,10 @@ class _$_Want extends _Want with DiagnosticableTreeMixin {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Want &&
+            other is _$WantImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.rating, rating) || other.rating == rating) &&
@@ -242,12 +245,12 @@ class _$_Want extends _Want with DiagnosticableTreeMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WantCopyWith<_$_Want> get copyWith =>
-      __$$_WantCopyWithImpl<_$_Want>(this, _$identity);
+  _$$WantImplCopyWith<_$WantImpl> get copyWith =>
+      __$$WantImplCopyWithImpl<_$WantImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WantToJson(
+    return _$$WantImplToJson(
       this,
     );
   }
@@ -256,17 +259,15 @@ class _$_Want extends _Want with DiagnosticableTreeMixin {
 abstract class _Want extends Want {
   const factory _Want(
       {required final int id,
-      @JsonKey(name: "resource_url")
-          required final String url,
+      @JsonKey(name: "resource_url") required final String url,
       required final int rating,
-      @JsonKey(name: "date_added")
-          required final String dateAdded,
+      @JsonKey(name: "date_added") required final String dateAdded,
       @JsonKey(name: "basic_information")
-          required final Information information,
-      required final String notes}) = _$_Want;
+      required final Information information,
+      required final String notes}) = _$WantImpl;
   const _Want._() : super._();
 
-  factory _Want.fromJson(Map<String, dynamic> json) = _$_Want.fromJson;
+  factory _Want.fromJson(Map<String, dynamic> json) = _$WantImpl.fromJson;
 
   @override
   int get id;
@@ -285,5 +286,6 @@ abstract class _Want extends Want {
   String get notes;
   @override
   @JsonKey(ignore: true)
-  _$$_WantCopyWith<_$_Want> get copyWith => throw _privateConstructorUsedError;
+  _$$WantImplCopyWith<_$WantImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

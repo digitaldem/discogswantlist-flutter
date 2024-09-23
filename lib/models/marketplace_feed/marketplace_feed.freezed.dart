@@ -12,7 +12,7 @@ part of 'marketplace_feed.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MarketplaceFeed _$MarketplaceFeedFromJson(Map<String, dynamic> json) {
   return _MarketplaceFeed.fromJson(json);
@@ -81,11 +81,11 @@ class _$MarketplaceFeedCopyWithImpl<$Res, $Val extends MarketplaceFeed>
 }
 
 /// @nodoc
-abstract class _$$_MarketplaceFeedCopyWith<$Res>
+abstract class _$$MarketplaceFeedImplCopyWith<$Res>
     implements $MarketplaceFeedCopyWith<$Res> {
-  factory _$$_MarketplaceFeedCopyWith(
-          _$_MarketplaceFeed value, $Res Function(_$_MarketplaceFeed) then) =
-      __$$_MarketplaceFeedCopyWithImpl<$Res>;
+  factory _$$MarketplaceFeedImplCopyWith(_$MarketplaceFeedImpl value,
+          $Res Function(_$MarketplaceFeedImpl) then) =
+      __$$MarketplaceFeedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -93,11 +93,11 @@ abstract class _$$_MarketplaceFeedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MarketplaceFeedCopyWithImpl<$Res>
-    extends _$MarketplaceFeedCopyWithImpl<$Res, _$_MarketplaceFeed>
-    implements _$$_MarketplaceFeedCopyWith<$Res> {
-  __$$_MarketplaceFeedCopyWithImpl(
-      _$_MarketplaceFeed _value, $Res Function(_$_MarketplaceFeed) _then)
+class __$$MarketplaceFeedImplCopyWithImpl<$Res>
+    extends _$MarketplaceFeedCopyWithImpl<$Res, _$MarketplaceFeedImpl>
+    implements _$$MarketplaceFeedImplCopyWith<$Res> {
+  __$$MarketplaceFeedImplCopyWithImpl(
+      _$MarketplaceFeedImpl _value, $Res Function(_$MarketplaceFeedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$_MarketplaceFeedCopyWithImpl<$Res>
     Object? updated = null,
     Object? entry = null,
   }) {
-    return _then(_$_MarketplaceFeed(
+    return _then(_$MarketplaceFeedImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -131,16 +131,16 @@ class __$$_MarketplaceFeedCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MarketplaceFeed implements _MarketplaceFeed {
-  _$_MarketplaceFeed(
+class _$MarketplaceFeedImpl implements _MarketplaceFeed {
+  _$MarketplaceFeedImpl(
       {required this.id,
       required this.title,
       required this.updated,
       required final List<MarketplaceEntry> entry})
       : _entry = entry;
 
-  factory _$_MarketplaceFeed.fromJson(Map<String, dynamic> json) =>
-      _$$_MarketplaceFeedFromJson(json);
+  factory _$MarketplaceFeedImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MarketplaceFeedImplFromJson(json);
 
   @override
   final String id;
@@ -162,10 +162,10 @@ class _$_MarketplaceFeed implements _MarketplaceFeed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MarketplaceFeed &&
+            other is _$MarketplaceFeedImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.updated, updated) || other.updated == updated) &&
@@ -180,12 +180,13 @@ class _$_MarketplaceFeed implements _MarketplaceFeed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MarketplaceFeedCopyWith<_$_MarketplaceFeed> get copyWith =>
-      __$$_MarketplaceFeedCopyWithImpl<_$_MarketplaceFeed>(this, _$identity);
+  _$$MarketplaceFeedImplCopyWith<_$MarketplaceFeedImpl> get copyWith =>
+      __$$MarketplaceFeedImplCopyWithImpl<_$MarketplaceFeedImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MarketplaceFeedToJson(
+    return _$$MarketplaceFeedImplToJson(
       this,
     );
   }
@@ -196,10 +197,10 @@ abstract class _MarketplaceFeed implements MarketplaceFeed {
       {required final String id,
       required final String title,
       required final String updated,
-      required final List<MarketplaceEntry> entry}) = _$_MarketplaceFeed;
+      required final List<MarketplaceEntry> entry}) = _$MarketplaceFeedImpl;
 
   factory _MarketplaceFeed.fromJson(Map<String, dynamic> json) =
-      _$_MarketplaceFeed.fromJson;
+      _$MarketplaceFeedImpl.fromJson;
 
   @override
   String get id;
@@ -211,6 +212,6 @@ abstract class _MarketplaceFeed implements MarketplaceFeed {
   List<MarketplaceEntry> get entry;
   @override
   @JsonKey(ignore: true)
-  _$$_MarketplaceFeedCopyWith<_$_MarketplaceFeed> get copyWith =>
+  _$$MarketplaceFeedImplCopyWith<_$MarketplaceFeedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

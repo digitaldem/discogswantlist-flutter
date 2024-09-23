@@ -6,14 +6,14 @@ part of 'configuration.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Configuration _$$_ConfigurationFromJson(Map<String, dynamic> json) =>
-    _$_Configuration(
+_$ConfigurationImpl _$$ConfigurationImplFromJson(Map<String, dynamic> json) =>
+    _$ConfigurationImpl(
       discogsUrl: json['discogsUrl'] as String?,
       discogsToken: json['discogsToken'] as String?,
       discogsUsername: json['discogsUsername'] as String?,
     );
 
-Map<String, dynamic> _$$_ConfigurationToJson(_$_Configuration instance) =>
+Map<String, dynamic> _$$ConfigurationImplToJson(_$ConfigurationImpl instance) =>
     <String, dynamic>{
       'discogsUrl': instance.discogsUrl,
       'discogsToken': instance.discogsToken,

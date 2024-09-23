@@ -12,7 +12,7 @@ part of 'information.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Information _$InformationFromJson(Map<String, dynamic> json) {
   return _Information.fromJson(json);
@@ -121,11 +121,11 @@ class _$InformationCopyWithImpl<$Res, $Val extends Information>
 }
 
 /// @nodoc
-abstract class _$$_InformationCopyWith<$Res>
+abstract class _$$InformationImplCopyWith<$Res>
     implements $InformationCopyWith<$Res> {
-  factory _$$_InformationCopyWith(
-          _$_Information value, $Res Function(_$_Information) then) =
-      __$$_InformationCopyWithImpl<$Res>;
+  factory _$$InformationImplCopyWith(
+          _$InformationImpl value, $Res Function(_$InformationImpl) then) =
+      __$$InformationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -141,11 +141,11 @@ abstract class _$$_InformationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_InformationCopyWithImpl<$Res>
-    extends _$InformationCopyWithImpl<$Res, _$_Information>
-    implements _$$_InformationCopyWith<$Res> {
-  __$$_InformationCopyWithImpl(
-      _$_Information _value, $Res Function(_$_Information) _then)
+class __$$InformationImplCopyWithImpl<$Res>
+    extends _$InformationCopyWithImpl<$Res, _$InformationImpl>
+    implements _$$InformationImplCopyWith<$Res> {
+  __$$InformationImplCopyWithImpl(
+      _$InformationImpl _value, $Res Function(_$InformationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -161,7 +161,7 @@ class __$$_InformationCopyWithImpl<$Res>
     Object? genres = null,
     Object? styles = null,
   }) {
-    return _then(_$_Information(
+    return _then(_$InformationImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -204,8 +204,8 @@ class __$$_InformationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Information extends _Information with DiagnosticableTreeMixin {
-  const _$_Information(
+class _$InformationImpl extends _Information with DiagnosticableTreeMixin {
+  const _$InformationImpl(
       {required this.id,
       @JsonKey(name: "resource_url") required this.url,
       required this.title,
@@ -220,8 +220,8 @@ class _$_Information extends _Information with DiagnosticableTreeMixin {
         _styles = styles,
         super._();
 
-  factory _$_Information.fromJson(Map<String, dynamic> json) =>
-      _$$_InformationFromJson(json);
+  factory _$InformationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InformationImplFromJson(json);
 
   @override
   final int id;
@@ -283,10 +283,10 @@ class _$_Information extends _Information with DiagnosticableTreeMixin {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Information &&
+            other is _$InformationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.title, title) || other.title == title) &&
@@ -315,12 +315,12 @@ class _$_Information extends _Information with DiagnosticableTreeMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InformationCopyWith<_$_Information> get copyWith =>
-      __$$_InformationCopyWithImpl<_$_Information>(this, _$identity);
+  _$$InformationImplCopyWith<_$InformationImpl> get copyWith =>
+      __$$InformationImplCopyWithImpl<_$InformationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_InformationToJson(
+    return _$$InformationImplToJson(
       this,
     );
   }
@@ -336,11 +336,11 @@ abstract class _Information extends Information {
       required final String thumb,
       @JsonKey(name: "cover_image") required final String image,
       required final List<String> genres,
-      required final List<String> styles}) = _$_Information;
+      required final List<String> styles}) = _$InformationImpl;
   const _Information._() : super._();
 
   factory _Information.fromJson(Map<String, dynamic> json) =
-      _$_Information.fromJson;
+      _$InformationImpl.fromJson;
 
   @override
   int get id;
@@ -364,6 +364,6 @@ abstract class _Information extends Information {
   List<String> get styles;
   @override
   @JsonKey(ignore: true)
-  _$$_InformationCopyWith<_$_Information> get copyWith =>
+  _$$InformationImplCopyWith<_$InformationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
