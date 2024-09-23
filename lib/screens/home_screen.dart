@@ -19,7 +19,7 @@ class HomeScreen extends RScreen<AppNavigator, HomeSegment> {
   @override
   Widget buildScreen(BuildContext context, WidgetRef ref, AppNavigator navigator, IconButton? appBarLeading) => Scaffold(
         appBar: AppBar(
-          title: const Text('Discogs Want List'),
+          title: const Text('Discogs Wantlist'),
         ),
         body: const Wantlist(),
       );

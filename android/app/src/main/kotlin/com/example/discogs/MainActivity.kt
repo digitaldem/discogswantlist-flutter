@@ -1,4 +1,4 @@
-package com.example.discogs
+package com.digitaldementia.discogswantlist
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -8,7 +8,7 @@
 PRODUCT_NAME = discogs
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.discogs
+PRODUCT_BUNDLE_IDENTIFIER = com.digitaldementia.discogswantlist
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 digitaldementia. All rights reserved.

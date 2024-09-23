@@ -1,4 +1,4 @@
-# Discogs Want List Viewer
+# Discogs Wantlist Viewer
 
 ## Overview
 

@@ -24,7 +24,7 @@ class WantScreen extends RScreen<AppNavigator, WantSegment> {
   @override
   Widget buildScreen(BuildContext context, WidgetRef ref, AppNavigator navigator, IconButton? appBarLeading) => Scaffold(
         appBar: AppBar(
-          title: const Text('Discogs Want List'),
+          title: const Text('Discogs Wantlist'),
           leading: appBarLeading,
         ),
         body: Want(id: segment.id),

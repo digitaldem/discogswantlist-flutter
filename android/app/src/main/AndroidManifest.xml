@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.discogs">
+    package="com.digitaldementia.discogswantlist">
    <application
         android:label="discogs"
         android:name="${applicationName}"

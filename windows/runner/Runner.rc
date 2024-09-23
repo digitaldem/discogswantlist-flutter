@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "digitaldementia" "\0"
             VALUE "FileDescription", "discogs" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "discogs" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 digitaldementia. All rights reserved." "\0"
             VALUE "OriginalFilename", "discogs.exe" "\0"
             VALUE "ProductName", "discogs" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
