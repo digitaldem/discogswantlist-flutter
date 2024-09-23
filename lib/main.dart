@@ -25,7 +25,17 @@ class App extends ConsumerWidget {
     final AppNavigator navigator = ref.read(navigatorProvider) as AppNavigator;
     return MaterialApp.router(
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.grey,
+            shadowColor: Colors.black,
+            surfaceTintColor: Colors.transparent,
+            elevation: 5,
+            scrolledUnderElevation: 5,
+            titleTextStyle: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 22,
+            )),
       ),
       routerDelegate: navigator.routerDelegate,
       routeInformationParser: navigator.routeInformationParser,

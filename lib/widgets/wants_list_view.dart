@@ -83,7 +83,7 @@ class WantsListView extends ConsumerWidget {
                   child: FloatingActionButton(
                     backgroundColor: Colors.black87,
                     elevation: 10,
-                    child: const Icon(Icons.arrow_upward),
+                    child: const Icon(Icons.arrow_upward, color: Colors.white),
                     onPressed: () {
                       // Scroll back up to the top
                       scrollController.animateTo(0, duration: const Duration(milliseconds: 500), curve: Curves.fastOutSlowIn);

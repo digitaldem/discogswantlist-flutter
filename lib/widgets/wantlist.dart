@@ -10,8 +10,8 @@ class Wantlist extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      children: const [
+    return const Column(
+      children: [
         SizedBox(height: 8),
         Filter(),
         WantsListView(),
