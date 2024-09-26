@@ -26,16 +26,20 @@ class App extends ConsumerWidget {
     return MaterialApp.router(
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.grey,
-            shadowColor: Colors.black,
-            surfaceTintColor: Colors.transparent,
-            elevation: 5,
-            scrolledUnderElevation: 5,
-            titleTextStyle: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 22,
-            )),
+          backgroundColor: Colors.grey,
+          shadowColor: Colors.black,
+          surfaceTintColor: Colors.transparent,
+          elevation: 5,
+          scrolledUnderElevation: 5,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.white,
+          ),
+        ),
       ),
       routerDelegate: navigator.routerDelegate,
       routeInformationParser: navigator.routeInformationParser,
